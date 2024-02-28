@@ -110,13 +110,13 @@ switch flag,
   %%%%%%%%%%%%%%%
   % Derivatives %
   %%%%%%%%%%%%%%%
-  case 1,%连续状态的导数 dx
+  case 1,
     sys=mdlDerivatives(t,x,u);
 
   %%%%%%%%%%
   % Update %
   %%%%%%%%%%
-  case 2,%离散状态的更新 x(n+1)
+  case 2,
     sys=mdlUpdate(t,x,u);
 
   %%%%%%%%%%%
@@ -165,11 +165,11 @@ function [sys,x0,str,ts,simStateCompliance]=mdlInitializeSizes
 %
 sizes = simsizes;
 
-sizes.NumContStates  = 0;%连续变量
+sizes.NumContStates  = 0;
 sizes.NumDiscStates  = 0;
 sizes.NumOutputs     = 0;
 sizes.NumInputs      = 0;
-sizes.DirFeedthrough = 1;%是否有直接关系
+sizes.DirFeedthrough = 1;
 sizes.NumSampleTimes = 1;   % at least one sample time is needed
 
 sys = simsizes(sizes);
@@ -187,7 +187,7 @@ str = [];
 %
 % initialize the array of sample times
 %
-ts  = [0 0];%采样时间间隔 采样延迟
+ts  = [0 0];
 
 % Specify the block simStateCompliance. The allowed values are:
 %    'UnknownSimState', < The default setting; warn and assume DefaultSimState
